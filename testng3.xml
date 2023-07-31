@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Loan Department Suite" parallel="tests" thread-count="2"> <!-- Suite name can be changed to Loan Department-->
+<!-- How to drive data from TestNG xml file - via parameterisation-->
+<!-- parameter name & parameter value as below is a must-->  
+<!-- in the method where it is required add @Parameters({"URL"})-->
+<!-- That method needs to be parameterised accordingly-->
+<!-- e.g. public void WebLoginCarLoan(String urlname)-->
+<!-- Parameterisation written betweem module and suite is globally available-->
+<listeners>
+	<listener class-name="test.Listeners"></listener>
+</listeners>
+<parameter name="URL" value="qaclickacademy.com"></parameter>
+
+  <test thread-count="5" name="Personal Loan Test"> <!-- Test module name can be changed to Personal Loan -->
+  <!-- Parameterisation written below module is for the test case level-->
+ <parameter name="URL" value="personalloan.com"></parameter>
+ 
+    <classes>
+      <class name="test.Try1"> <!-- Java Class with Test cases -->
+		  <methods>
+			  <include name="Demo1">
+				  
+			  </include>
+		  </methods>
+	  </class>
+      
+      <class name = "test.Try2"/> <!-- Java Class with Test cases -->
+      <class name = "test.Try4"/>
+    </classes>
+  </test> <!-- Test -->
+  
+  <test name = "Car Loan">
+	  <parameter name="URL" value="carloan.com"></parameter>
+	  <parameter name="APIkey/UserName" value="Gajanan11"></parameter>
+	  <classes>
+		  
+		<class name = "test.Try3"> 
+		<methods>
+			<exclude name="LoginAPICarLoan"></exclude>
+		</methods>
+		</class>
+	  </classes>
+	 
+  </test>
+  
+</suite> <!-- Suite -->

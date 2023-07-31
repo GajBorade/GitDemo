@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Loan Department"> <!-- Suite name can be changed to Loan Department-->
+
+  <test thread-count="5" name="Regression"> <!-- Test module name can be changed to Personal Loan -->
+             <groups>
+			 <run>
+				 <exclude name="Smoke"></exclude>
+			 </run>
+		 </groups>
+    
+    
+    <classes>
+      <class name="test.Try1"> <!-- Java Class with Test cases -->
+	  </class>
+      
+      <class name = "test.Try2"/> <!-- Java Class with Test cases -->
+      <class name = "test.Try4"/>
+      <class name = "test.Try3"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
